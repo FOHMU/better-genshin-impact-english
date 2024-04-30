@@ -10,7 +10,7 @@
                  xmlns:tray="http://schemas.lepo.co/wpfui/2022/xaml/tray"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:viewModel="clr-namespace:BetterGenshinImpact.ViewModel"
-                 Title="更好的原神"
+                 Title="Better Genshin Impact"
                  Width="900"
                  Height="600"
                  d:Background="#D2D2D2"
@@ -122,7 +122,7 @@
                                Command="{Binding HideCommand}"
                                CornerRadius="0"
                                Icon="{ui:SymbolIcon CaretDown24}"
-                               ToolTip="最小化到托盘" />
+                               ToolTip="Minimize to tray" />
                 </StackPanel>
             </ui:TitleBar.Header>
         </ui:TitleBar>
@@ -139,7 +139,7 @@
                         <markup:ServiceLocator Type="{x:Type viewModel:NotifyIconViewModel}" />
                     </ContextMenu.DataContext>
                     <ui:MenuItem Command="{Binding ExitCommand}"
-                                 Header="退出"
+                                 Header="Exit"
                                  Icon="{ui:SymbolIcon Dismiss24}" />
                 </ContextMenu>
             </tray:NotifyIcon.Menu>
