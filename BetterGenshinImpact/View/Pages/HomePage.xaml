@@ -86,7 +86,7 @@
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
                         Functions are available only after startup,<Run FontWeight="Bold" TextDecorations="Underline">
-                            Click to expand startup configuration
+                            Click to expand startup related configurations
                         </Run>
                         .</ui:TextBlock>
                     <StackPanel Grid.Row="0"
@@ -130,7 +130,7 @@
                               Grid.RowSpan="2"
                               Grid.Column="1"
                               Margin="0,0,36,0"
-                              ItemsSource="{Binding ModeNames}"
+                              ItemsSource="{Binding ModeNames, Mode=OneWay}"
                               SelectedItem="{Binding Config.CaptureMode, Mode=TwoWay}" />
                 </Grid>
                 <Separator Margin="-18,0" BorderThickness="0,1,0,0" />

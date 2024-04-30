@@ -22,6 +22,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using Vanara.PInvoke;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BetterGenshinImpact.GameTask.AutoSkip;
 
@@ -192,7 +193,7 @@ public class AutoSkipTrigger : ITaskTrigger
             // 邀约选项选择 1s 1次
             if (_config.AutoHangoutEventEnabled && !hasOption)
             {
-                if ((DateTime.Now - _prevHangoutExecute).TotalMilliseconds < 1000)
+                if ((DateTime.Now - _prevHangoutExecute).TotalMilliseconds < 1200)
                 {
                     return;
                 }
@@ -215,19 +216,20 @@ public class AutoSkipTrigger : ITaskTrigger
     private bool ClickBlackGameScreen(CaptureContent content)
     {
         // 黑屏剧情要点击鼠标（多次） 几乎全黑的时候不用点击
-        using var grayMat = new Mat(content.CaptureRectArea.SrcGreyMat, new Rect(0, content.CaptureRectArea.SrcGreyMat.Height / 3, content.CaptureRectArea.SrcGreyMat.Width, content.CaptureRectArea.SrcGreyMat.Height / 3));
-        var blackCount = OpenCvCommonHelper.CountGrayMatColor(grayMat, 0);
-        var rate = blackCount * 1d / (grayMat.Width * grayMat.Height);
-        if (rate is >= 0.5 and < 0.98999)
+        if ((DateTime.Now - _prevClickTime).TotalMilliseconds > 1200)
         {
-            Simulation.SendInputEx.Mouse.LeftButtonClick();
-            if ((DateTime.Now - _prevClickTime).TotalMilliseconds > 1000)
+            using var grayMat = new Mat(content.CaptureRectArea.SrcGreyMat, new Rect(0, content.CaptureRectArea.SrcGreyMat.Height / 3, content.CaptureRectArea.SrcGreyMat.Width, content.CaptureRectArea.SrcGreyMat.Height / 3));
+            var blackCount = OpenCvCommonHelper.CountGrayMatColor(grayMat, 0);
+            var rate = blackCount * 1d / (grayMat.Width * grayMat.Height);
+            if (rate is >= 0.5 and < 0.98999)
             {
-                _logger.LogInformation("自动剧情：{Text} 比例 {Rate}", "点击黑屏", rate.ToString("F"));
-            }
+                Simulation.SendInputEx.Mouse.LeftButtonClick();
 
-            _prevClickTime = DateTime.Now;
-            return true;
+                _logger.LogInformation("自动剧情：{Text} 比例 {Rate}", "点击黑屏", rate.ToString("F"));
+
+                _prevClickTime = DateTime.Now;
+                return true;
+            }
         }
         return false;
     }
@@ -273,8 +275,25 @@ public class AutoSkipTrigger : ITaskTrigger
                 hangoutOption.OptionTextSrc = StringUtils.RemoveAllEnter(text);
             }
 
-            // todo 根据文字内容决定停留还是自动点击
-            // 这个OCR好像不太准确
+            // 优先选择分支选项
+            if (!string.IsNullOrEmpty(_config.AutoHangoutEndChoose))
+            {
+                var chooseList = HangoutConfig.Instance.HangoutOptions[_config.AutoHangoutEndChoose];
+                foreach (var hangoutOption in hangoutOptionList)
+                {
+                    foreach (var str in chooseList)
+                    {
+                        if (hangoutOption.OptionTextSrc.Contains(str))
+                        {
+                            hangoutOption.Click(clickOffset);
+                            _logger.LogInformation("邀约分支[{Text}]关键词[{Str}]命中", _config.AutoHangoutEndChoose, str);
+                            AutoHangoutSkipLog(hangoutOption.OptionTextSrc);
+                            VisionContext.Instance().DrawContent.RemoveRect("HangoutIcon");
+                            return;
+                        }
+                    }
+                }
+            }
 
             // 没有停留的选项 优先选择未点击的的选项
             foreach (var hangoutOption in hangoutOptionList)
@@ -283,6 +302,7 @@ public class AutoSkipTrigger : ITaskTrigger
                 {
                     hangoutOption.Click(clickOffset);
                     AutoHangoutSkipLog(hangoutOption.OptionTextSrc);
+                    VisionContext.Instance().DrawContent.RemoveRect("HangoutIcon");
                     return;
                 }
             }

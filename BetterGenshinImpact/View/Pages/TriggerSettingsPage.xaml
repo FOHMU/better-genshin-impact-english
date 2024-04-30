@@ -347,12 +347,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Select the invitation to make (this feature is temporarily suspended because no one provided data)"
+                                  Text="Select the invitation branch (bubble association selection is not supported)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Pause when branching options are available, prioritize achievements or GE options"
+                                  Text="Options will be selected based on the keywords of the selected branch."
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
