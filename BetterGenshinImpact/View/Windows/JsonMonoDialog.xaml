@@ -41,10 +41,10 @@
                     <Button MinWidth="90"
                             Margin="8,0,8,0"
                             Command="{Binding SaveCommand}"
-                            Content="保存" />
+                            Content="Save" />
                     <Button MinWidth="90"
                             Command="{Binding CloseCommand}"
-                            Content="关闭" />
+                            Content="Close" />
                 </StackPanel>
             </Grid>
         </Grid>

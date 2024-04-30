@@ -17,7 +17,7 @@
     <StackPanel Margin="42,16,42,12">
         <ui:TextBlock Margin="0,0,0,8"
                       FontTypography="BodyStrong"
-                      Text="辅助操控设置" />
+                      Text="Macros" />
 
         <!--  一键战斗宏  -->
         <ui:CardExpander Margin="0,0,0,12"
@@ -36,12 +36,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="一键战斗宏"
+                                  Text="One-click combat macro"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="触发后会识别当前出战角色，并根据配置执行对应的宏"
+                                  Text="After triggering, the currently active character will be identified and the corresponding macro will be executed according to the configuration"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -63,12 +63,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="快捷键触发方式"
+                                  Text="Shortcut key trigger mode"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="按住时重复：按住时重复执行；触发：按下启动再按关闭"
+                                  Text="Repeat when pressed: Repeat execution when pressed; Trigger: Press to start and then press to turn off"
                                   TextWrapping="Wrap" />
                     <ComboBox Grid.Row="0"
                               Grid.RowSpan="2"
@@ -90,12 +90,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="战斗宏配置"
+                                  Text="Battle macro configuration"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="配置每个角色执行的战斗宏，修改需重启软件生效，比如：胡桃A重跳"
+                                  Text="Configure the combat macro executed by each character. A restart is required for the changes to take effect"
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
@@ -116,12 +116,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="角色选择使用的战斗宏编号"
+                                  Text="Combat macro number used by character selection"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="用于修改当前配置文件中哪个战斗宏是优先使用的（1~5）"
+                                  Text="Used to modify which combat macro in the current configuration file is used first (1~5)"
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -152,19 +152,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="那维莱特 - 转圈圈"
+                                  Text="Neuvillette - Spinning"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="快速水平平移鼠标，需要配置快捷键进行触发"
+                                  Text="Quickly move the mouse horizontally, you need to configure shortcut keys to trigger it"
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"
                                Margin="0,0,24,0"
                                Command="{Binding GoToHotKeyPageCommand}"
-                               Content="绑定快捷键" />
+                               Content="Bind Hotkey" />
                 </Grid>
             </ui:CardExpander.Header>
             <StackPanel>
@@ -180,12 +180,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="移动鼠标距离"
+                                  Text="Mouse move distance"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="可以为负数，绝对值越大移动越快，和鼠标DPI有一定关系，请不要配置太大"
+                                  Text="It can be a negative number. The larger the absolute value, the faster the movement. It has a certain relationship with the mouse DPI. Please do not configure it too large"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -206,12 +206,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="移动鼠标间隔（毫秒）"
+                                  Text="Mouse move interval (milliseconds)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="可以设置为0，配置完毕后请切换tab页生效（其他配置也一样）"
+                                  Text="It can be set to 0. After the configuration is completed, please switch the tab page to take effect (the same applies to other configurations)"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -240,12 +240,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="快速强化圣遗物"
+                                  Text="Quickly upgrade artifacts"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="快速跳过强化结果展示，需要配置快捷键进行触发"
+                                  Text="Quickly skip the upgrade result display, you need to configure the shortcut key to trigger it"
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
@@ -268,12 +268,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="强化的额外等待时间（毫秒）"
+                                  Text="Additional wait time for upgrade (milliseconds)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="高延迟下无法跳过强化结果显示时，需要延长这个时间配置"
+                                  Text="When the display of enhanced results cannot be skipped under high latency, this time configuration needs to be extended."
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -298,18 +298,18 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="一键购买"
+                                  Text="One click purchase"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="在物品购买/兑换页使用，从选中物品处开始，长按持续购买"
+                                  Text="Use it on the item purchase/exchange page. Start from the selected item and press and hold to continue purchasing."
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
             <ui:Button Margin="0,0,36,0"
                        Command="{Binding GoToHotKeyPageCommand}"
-                       Content="绑定快捷键" />
+                       Content="Bind Hotkey" />
         </ui:CardControl>
 
         <!--  一键进出尘歌壶  -->
@@ -323,18 +323,18 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="一键进出尘歌壶"
+                                  Text="Serenitea Pot entry and exit with one click"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="一键自动打开背包，放置尘歌壶并进入"
+                                  Text="Automatically open the backpack with one click, place the Serenitea Pot and enter"
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
             <ui:Button Margin="0,0,36,0"
                        Command="{Binding GoToHotKeyPageCommand}"
-                       Content="绑定快捷键" />
+                       Content="Bind Hotkey" />
         </ui:CardControl>
 
         <!--  一键确认/取消  -->
@@ -348,18 +348,18 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="一键确认/取消"
+                                  Text="One-click confirmation/cancel"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="绑定快捷键到原神的确认/取消按钮"
+                                  Text="Bind hotkeys to Genshin Impact's confirm/cancel button"
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
             <ui:Button Margin="0,0,36,0"
                        Command="{Binding GoToHotKeyPageCommand}"
-                       Content="绑定快捷键" />
+                       Content="Bind Hotkey" />
         </ui:CardControl>
 
 
@@ -375,12 +375,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="长按空格等于连续按下空格"
+                                  Text="Long pressing space is equal to pressing space continuously"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="轻松解除冻结，由于在水下存在长按的空格的场景，所以不推荐启用"
+                                  Text="Easily unfreeze. In a scenario of long-pressing the space underwater, it is not recommended to enable it"
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
@@ -397,12 +397,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="长按 F 等于连续按下 F "
+                                  Text="Long pressing F is equal to pressing F continuously"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="快速拾取大量掉落物，有自动拾取的功能下，就显得比较鸡肋了"
+                                  Text="Quickly pick up a large number of dropped objects. It's a bit useless with the auto pick function."
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>

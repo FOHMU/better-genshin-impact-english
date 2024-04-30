@@ -19,7 +19,7 @@
     <StackPanel Margin="42,16,42,12">
         <ui:TextBlock Margin="0,0,0,8"
                       FontTypography="BodyStrong"
-                      Text="通知设置" />
+                      Text="Notification Settings" />
 
         <!--  Webhook  -->
         <ui:CardExpander Margin="0,0,0,12"
@@ -38,12 +38,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="启用Webhook"
+                                  Text="Enable webhooks"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Webhook相关设置"
+                                  Text="Webhook related settings"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -65,12 +65,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Webhook端点"
+                                  Text="Webhook endpoint"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="填写Webhook端点"
+                                  Text="Fill in the Webhook endpoint"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -93,18 +93,18 @@
                     <ui:TextBlock Grid.Row="0"
                                  Grid.Column="0"
                                  FontTypography="Body"
-                                 Text="测试"
+                                 Text="Test"
                                  TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                  Grid.Column="0"
                                  Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                 Text="发送测试载荷"
+                                 Text="Send test payload"
                                  TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.Column="1"
                                HorizontalAlignment="Right"
                                Margin="0,0,36,0"
-                               Content="发送"
+                               Content="Send"
                                Command="{Binding TestWebhookCommand}"
                                IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBooleanConverter}}" />
                     <ui:TextBlock Grid.Row="1"

@@ -46,35 +46,35 @@
                            IsPaneToggleVisible="True"
                            OpenPaneLength="150">
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItem Content="启动"
+                <ui:NavigationViewItem Content="Start"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:HomePage}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="Play24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="实时触发"
+                <ui:NavigationViewItem Content="Real-Time Trigger"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:TriggerSettingsPage}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="Timer24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="独立任务"
+                <ui:NavigationViewItem Content="Automated Tasks"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:TaskSettingsPage}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="TaskListSquareLtr24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="辅助操控"
+                <ui:NavigationViewItem Content="Macros"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:MacroSettingsPage}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="XboxController24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="脚本控制"
+                <ui:NavigationViewItem Content="Scripts"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:ScriptControlPage}"
                                        Visibility="{markup:Converter Value={x:Static helpers:RuntimeHelper.IsDebuggerAttached},
@@ -83,14 +83,14 @@
                         <ui:SymbolIcon Symbol="WebAsset16" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="快捷键"
+                <ui:NavigationViewItem Content="Hotkeys"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:HotKeyPage}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="Flash24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="通知"
+                <ui:NavigationViewItem Content="Notifications"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:NotificationSettingsPage}">
                     <ui:NavigationViewItem.Icon>
@@ -99,7 +99,7 @@
                 </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
             <ui:NavigationView.FooterMenuItems>
-                <ui:NavigationViewItem Content="设置"
+                <ui:NavigationViewItem Content="Settings"
                                        NavigationCacheMode="Enabled"
                                        TargetPageType="{x:Type pages:CommonSettingsPage}">
                     <ui:NavigationViewItem.Icon>

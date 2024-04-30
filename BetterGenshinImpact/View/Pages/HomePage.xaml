@@ -47,12 +47,12 @@
                         <ui:TextBlock FontTypography="Title" Text="BetterGI" />
                         <ui:TextBlock FontTypography="Subtitle"
                                       Opacity="0.8"
-                                      Text="更好的原神，免费且开源" />
+                                      Text="BetterGI, Free and Open Source" />
                         <ui:TextBlock FontTypography="BodyStrong" Opacity="0.6">
                             <Hyperlink Command="{Binding GoToWikiUrlCommand}"
                                        Foreground="#B7FFFFFF"
                                        TextDecorations="None">
-                                <Run>点击查看文档与教程</Run>
+                                <Run>Click for documentation and tutorials</Run>
                                 <Run FontFamily="{StaticResource FluentSystemIcons}" FontWeight="Light">&#xEE7A;</Run>
                             </Hyperlink>
 
@@ -79,27 +79,27 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="BetterGI · 更好的原神，启动！"
+                                  Text="BetterGI · BetterGI, start!"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        启动后才能使用各项功能，<Run FontWeight="Bold" TextDecorations="Underline">
-                            点击展开启动相关配置
+                        Functions are available only after startup,<Run FontWeight="Bold" TextDecorations="Underline">
+                            Click to expand startup configuration
                         </Run>
-                        。</ui:TextBlock>
+                        .</ui:TextBlock>
                     <StackPanel Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="1"
                                 Margin="0,0,24,0"
                                 Orientation="Horizontal">
                         <ui:Button Command="{Binding StartTriggerCommand}"
-                                   Content="启动"
+                                   Content="Start"
                                    Icon="{ui:SymbolIcon Play24}"
                                    Visibility="{Binding TaskDispatcherEnabled, Converter={StaticResource BooleanToVisibilityRevertConverter}, Mode=OneWay}" />
                         <ui:Button Command="{Binding StopTriggerCommand}"
-                                   Content="停止"
+                                   Content="Stop"
                                    Icon="{ui:SymbolIcon Dismiss24}"
                                    Visibility="{Binding TaskDispatcherEnabled, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
                     </StackPanel>
@@ -119,12 +119,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="截图模式"
+                                  Text="Screenshot Mode"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="如果可用的话，推荐选择 BitBlt，问题较少"
+                                  Text="If available, BitBlt is recommended for fewer issues"
                                   TextWrapping="Wrap" />
                     <ComboBox Grid.Row="0"
                               Grid.RowSpan="2"
@@ -146,12 +146,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="触发器间隔（毫秒）"
+                                  Text="Trigger Interval (milliseconds)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="默认50ms，普通用户不建议调整这个值，具体调整方式见文档"
+                                  Text="50ms by default , it is not recommended to adjust this value for normal users, see the documentation for details."
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -173,12 +173,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="WindowsGraphicsCapture 截图方式启用位图缓存"
+                                  Text="Enable Bitmap Caching for WindowsGraphicsCapture"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="云原神出现获取到黑屏图案、原神出现掉帧的情况请尝试关闭此功能，并重启软件"
+                                  Text="If you get a black screen pattern or frame drop, please try to turn off this function and restart the software."
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -199,19 +199,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="测试图像捕获"
+                                  Text="Test Image Capture"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="测试功能，测试几种截图模式的效果"
+                                  Text="Test function to test the effect of different screenshot modes"
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding StartCaptureTestCommand}"
-                               Content="测试图像捕获" />
+                               Content="Test Image Capture" />
                 </Grid>
                 <Separator Margin="-18,0" BorderThickness="0,1,0,0" />
                 <Grid Margin="16">
@@ -226,19 +226,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="手动选择窗口（无法找到原神窗口时使用）"
+                                  Text="Manual Window Selection (used when the Genshin Impact window cannot be found)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="原神已经启动的情况下，点击“启动”仍旧提示无法找到窗口时使用"
+                                  Text="Use when you click on &quot;Start&quot; and the window cannot be found even if Genshin Impact has already started."
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding ManualPickWindowCommand}"
-                               Content="选择捕获窗口" />
+                               Content="Select Capture Window" />
                 </Grid>
                 <Separator Margin="-18,0" BorderThickness="0,1,0,0" />
                 <Grid Margin="16">
@@ -253,19 +253,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="系统图形设置"
+                                  Text="System Graphics Setup"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="可在此处关闭 Windows11 窗口化优化以支持 BitBlt"
+                                  Text="Windows 11 windowing optimization for BitBlt can be turned off here."
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding OpenDisplayAdvancedGraphicsSettingsCommand}"
-                               Content="开始设置" />
+                               Content="Start Setup" />
                 </Grid>
             </StackPanel>
         </ui:CardExpander>
@@ -287,12 +287,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="同时启动原神"
+                                  Text="Start Genshin Impact Together"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="启动 BetterGI 时，如果原神未启动，则自动启动原神。"
+                                  Text="When launching BetterGI, if Genshin Impact is not launched, it will be launched automatically."
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -308,14 +308,14 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>-----------------------------------------------------------------------------------------------------------------
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="原神安装位置（不支持云原神的联动启动）"
+                                  Text="Genshin Impact installation location (does not support Cloud Genshin Impact linkage startup)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -327,7 +327,7 @@
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding SelectInstallPathCommand}"
-                               Content="浏览" />
+                               Content="Browse" />
                 </Grid>
                 <Separator Margin="-18,0" BorderThickness="0,1,0,0" />
                 <Grid Margin="16">
@@ -342,12 +342,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="启动参数"
+                                  Text="Startup Parameters"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="如果你不知道什么是启动参数请不要填写。"
+                                  Text="If you don't know what a startup parameter is please don't fill it in."
                                   TextWrapping="Wrap" />
                     <!--  常见启动参数：无边框 -popupwindow 指定分辨率 -screen-width 1920 -screen-height 1080  -->
                     <ui:TextBox Grid.Row="0"
@@ -372,12 +372,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="自动进入游戏"
+                                  Text="Automatically Enter the Game"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="原神启动后自动进入游戏（自动开门）"
+                                  Text="Automatically enter the game after starting Genshin Impact (automatically open the door)"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -398,12 +398,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="自动点击获取月卡"
+                                  Text="Automatically Click to Get Monthly Card"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="进入游戏后自动点击月卡，如果有的话"
+                                  Text="Automatically click on the monthly card after entering the game, if there is one"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"

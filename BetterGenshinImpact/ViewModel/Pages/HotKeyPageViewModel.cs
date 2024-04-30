@@ -114,7 +114,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
     private void BuildHotKeySettingModelList()
     {
         var bgiEnabledHotKeySettingModel = new HotKeySettingModel(
-            "启动停止 BetterGI",
+            "Start/Stop BetterGI",
             nameof(Config.HotKeyConfig.BgiEnabledHotkey),
             Config.HotKeyConfig.BgiEnabledHotkey,
             Config.HotKeyConfig.BgiEnabledHotkeyType,
@@ -123,7 +123,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         HotKeySettingModels.Add(bgiEnabledHotKeySettingModel);
 
         var takeScreenshotHotKeySettingModel = new HotKeySettingModel(
-            "游戏截图（开发者）",
+            "Game screenshot (developer)",
             nameof(Config.HotKeyConfig.TakeScreenshotHotkey),
             Config.HotKeyConfig.TakeScreenshotHotkey,
             Config.HotKeyConfig.TakeScreenshotHotkeyType,
@@ -132,71 +132,71 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         HotKeySettingModels.Add(takeScreenshotHotKeySettingModel);
 
         var autoPickEnabledHotKeySettingModel = new HotKeySettingModel(
-            "自动拾取开关",
+            "Auto pickup switch",
             nameof(Config.HotKeyConfig.AutoPickEnabledHotkey),
             Config.HotKeyConfig.AutoPickEnabledHotkey,
             Config.HotKeyConfig.AutoPickEnabledHotkeyType,
             (_, _) =>
             {
                 TaskContext.Instance().Config.AutoPickConfig.Enabled = !TaskContext.Instance().Config.AutoPickConfig.Enabled;
-                _logger.LogInformation("切换{Name}状态为[{Enabled}]", "自动拾取", ToChinese(TaskContext.Instance().Config.AutoPickConfig.Enabled));
+                _logger.LogInformation("Switch {Name} status to [{Enabled}]", "Auto pickup", ToChinese(TaskContext.Instance().Config.AutoPickConfig.Enabled));
             }
         );
         HotKeySettingModels.Add(autoPickEnabledHotKeySettingModel);
 
         var autoSkipEnabledHotKeySettingModel = new HotKeySettingModel(
-            "自动剧情开关",
+            "Auto dialogue switch",
             nameof(Config.HotKeyConfig.AutoSkipEnabledHotkey),
             Config.HotKeyConfig.AutoSkipEnabledHotkey,
             Config.HotKeyConfig.AutoSkipEnabledHotkeyType,
             (_, _) =>
             {
                 TaskContext.Instance().Config.AutoSkipConfig.Enabled = !TaskContext.Instance().Config.AutoSkipConfig.Enabled;
-                _logger.LogInformation("切换{Name}状态为[{Enabled}]", "自动剧情", ToChinese(TaskContext.Instance().Config.AutoSkipConfig.Enabled));
+                _logger.LogInformation("Switch {Name} status to [{Enabled}]", "Auto dialogue", ToChinese(TaskContext.Instance().Config.AutoSkipConfig.Enabled));
             }
         );
         HotKeySettingModels.Add(autoSkipEnabledHotKeySettingModel);
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "自动邀约开关",
+            "Auto invite switch",
             nameof(Config.HotKeyConfig.AutoSkipHangoutEnabledHotkey),
             Config.HotKeyConfig.AutoSkipHangoutEnabledHotkey,
             Config.HotKeyConfig.AutoSkipHangoutEnabledHotkeyType,
             (_, _) =>
             {
                 TaskContext.Instance().Config.AutoSkipConfig.AutoHangoutEventEnabled = !TaskContext.Instance().Config.AutoSkipConfig.AutoHangoutEventEnabled;
-                _logger.LogInformation("切换{Name}状态为[{Enabled}]", "自动邀约", ToChinese(TaskContext.Instance().Config.AutoSkipConfig.AutoHangoutEventEnabled));
+                _logger.LogInformation("Switch {Name} status to [{Enabled}]", "Auto invite", ToChinese(TaskContext.Instance().Config.AutoSkipConfig.AutoHangoutEventEnabled));
             }
         ));
 
         var autoFishingEnabledHotKeySettingModel = new HotKeySettingModel(
-            "自动钓鱼开关",
+            "Auto fishing switch",
             nameof(Config.HotKeyConfig.AutoFishingEnabledHotkey),
             Config.HotKeyConfig.AutoFishingEnabledHotkey,
             Config.HotKeyConfig.AutoFishingEnabledHotkeyType,
             (_, _) =>
             {
                 TaskContext.Instance().Config.AutoFishingConfig.Enabled = !TaskContext.Instance().Config.AutoFishingConfig.Enabled;
-                _logger.LogInformation("切换{Name}状态为[{Enabled}]", "自动钓鱼", ToChinese(TaskContext.Instance().Config.AutoFishingConfig.Enabled));
+                _logger.LogInformation("Switch {Name} status to [{Enabled}]", "Auto fishing", ToChinese(TaskContext.Instance().Config.AutoFishingConfig.Enabled));
             }
         );
         HotKeySettingModels.Add(autoFishingEnabledHotKeySettingModel);
 
         var quickTeleportEnabledHotKeySettingModel = new HotKeySettingModel(
-            "快速传送开关",
+            "Fast teleport switch",
             nameof(Config.HotKeyConfig.QuickTeleportEnabledHotkey),
             Config.HotKeyConfig.QuickTeleportEnabledHotkey,
             Config.HotKeyConfig.QuickTeleportEnabledHotkeyType,
             (_, _) =>
             {
                 TaskContext.Instance().Config.QuickTeleportConfig.Enabled = !TaskContext.Instance().Config.QuickTeleportConfig.Enabled;
-                _logger.LogInformation("切换{Name}状态为[{Enabled}]", "快速传送", ToChinese(TaskContext.Instance().Config.QuickTeleportConfig.Enabled));
+                _logger.LogInformation("Switch {Name} status to [{Enabled}]", "Fast teleport", ToChinese(TaskContext.Instance().Config.QuickTeleportConfig.Enabled));
             }
         );
         HotKeySettingModels.Add(quickTeleportEnabledHotKeySettingModel);
 
         var quickTeleportTickHotKeySettingModel = new HotKeySettingModel(
-            "手动触发快速传送触发快捷键（按住起效）",
+            "Manually trigger the quick teleport hotkey (press and hold to take effect)",
             nameof(Config.HotKeyConfig.QuickTeleportTickHotkey),
             Config.HotKeyConfig.QuickTeleportTickHotkey,
             Config.HotKeyConfig.QuickTeleportTickHotkeyType,
@@ -206,7 +206,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         HotKeySettingModels.Add(quickTeleportTickHotKeySettingModel);
 
         var turnAroundHotKeySettingModel = new HotKeySettingModel(
-            "长按旋转视角 - 那维莱特转圈",
+            "Long press to rotate the perspective - Neuvillette rotates in circles",
             nameof(Config.HotKeyConfig.TurnAroundHotkey),
             Config.HotKeyConfig.TurnAroundHotkey,
             Config.HotKeyConfig.TurnAroundHotkeyType,
@@ -216,7 +216,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         HotKeySettingModels.Add(turnAroundHotKeySettingModel);
 
         var enhanceArtifactHotKeySettingModel = new HotKeySettingModel(
-            "按下快速强化圣遗物",
+            "Press to quickly upgrade the artifact",
             nameof(Config.HotKeyConfig.EnhanceArtifactHotkey),
             Config.HotKeyConfig.EnhanceArtifactHotkey,
             Config.HotKeyConfig.EnhanceArtifactHotkeyType,
@@ -226,7 +226,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         HotKeySettingModels.Add(enhanceArtifactHotKeySettingModel);
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "按下快速购买商店物品",
+            "Press to quickly buy store items",
             nameof(Config.HotKeyConfig.QuickBuyHotkey),
             Config.HotKeyConfig.QuickBuyHotkey,
             Config.HotKeyConfig.QuickBuyHotkeyType,
@@ -235,7 +235,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "按下快速进出尘歌壶",
+            "Press to quickly enter and exit the Serenitea Pot",
             nameof(Config.HotKeyConfig.QuickSereniteaPotHotkey),
             Config.HotKeyConfig.QuickSereniteaPotHotkey,
             Config.HotKeyConfig.QuickSereniteaPotHotkeyType,
@@ -244,7 +244,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "启动/停止自动七圣召唤",
+            "Start/Stop automatic Genius Invokation TCG",
             nameof(Config.HotKeyConfig.AutoGeniusInvokationHotkey),
             Config.HotKeyConfig.AutoGeniusInvokationHotkey,
             Config.HotKeyConfig.AutoGeniusInvokationHotkeyType,
@@ -252,7 +252,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "启动/停止自动伐木",
+            "Start/Stop automatic chopping",
             nameof(Config.HotKeyConfig.AutoWoodHotkey),
             Config.HotKeyConfig.AutoWoodHotkey,
             Config.HotKeyConfig.AutoWoodHotkeyType,
@@ -260,7 +260,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "启动/停止自动战斗",
+            "Start/Stop automatic combat",
             nameof(Config.HotKeyConfig.AutoFightHotkey),
             Config.HotKeyConfig.AutoFightHotkey,
             Config.HotKeyConfig.AutoFightHotkeyType,
@@ -268,7 +268,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "启动/停止自动秘境",
+            "Start/Stop automatic domain",
             nameof(Config.HotKeyConfig.AutoDomainHotkey),
             Config.HotKeyConfig.AutoDomainHotkey,
             Config.HotKeyConfig.AutoDomainHotkeyType,
@@ -276,7 +276,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "启动/停止自动追踪",
+            "Start/Stop automatic trail",
             nameof(Config.HotKeyConfig.AutoTrackHotkey),
             Config.HotKeyConfig.AutoTrackHotkey,
             Config.HotKeyConfig.AutoTrackHotkeyType,
@@ -284,7 +284,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "快捷点击原神内确认按钮",
+            "Quickly click the confirmation button in Genshin Impact",
             nameof(Config.HotKeyConfig.ClickGenshinConfirmButtonHotkey),
             Config.HotKeyConfig.ClickGenshinConfirmButtonHotkey,
             Config.HotKeyConfig.ClickGenshinConfirmButtonHotkeyType,
@@ -292,17 +292,17 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
             {
                 if (Bv.ClickConfirmButton(TaskControl.CaptureToRectArea()))
                 {
-                    TaskControl.Logger.LogInformation("触发快捷点击原神内{Btn}按钮：成功", "确认");
+                    TaskControl.Logger.LogInformation("Trigger hotkey on the {Btn} button in Genshin Impact: Success", "Confirm");
                 }
                 else
                 {
-                    TaskControl.Logger.LogInformation("触发快捷点击原神内{Btn}按钮：未找到按钮图片", "确认");
+                    TaskControl.Logger.LogInformation("Trigger hotkey on the {Btn} button in Genshin Impact: Button image not found", "Confirm");
                 }
             }
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "快捷点击原神内取消按钮",
+            "Quickly click the cancel button in Genshin Impact",
             nameof(Config.HotKeyConfig.ClickGenshinCancelButtonHotkey),
             Config.HotKeyConfig.ClickGenshinCancelButtonHotkey,
             Config.HotKeyConfig.ClickGenshinCancelButtonHotkeyType,
@@ -310,17 +310,17 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
             {
                 if (Bv.ClickCancelButton(TaskControl.CaptureToRectArea()))
                 {
-                    TaskControl.Logger.LogInformation("触发快捷点击原神内{Btn}按钮：成功", "取消");
+                    TaskControl.Logger.LogInformation("Trigger hotkey on the {Btn} button in Genshin Impact: Success", "Cancel");
                 }
                 else
                 {
-                    TaskControl.Logger.LogInformation("触发快捷点击原神内{Btn}按钮：未找到按钮图片", "取消");
+                    TaskControl.Logger.LogInformation("Trigger hotkey on the {Btn} button in Genshin Impact: Button image not found", "Cancel");
                 }
             }
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "一键战斗宏快捷键",
+            "One-click combat macro hotkeys",
             nameof(Config.HotKeyConfig.OneKeyFightHotkey),
             Config.HotKeyConfig.OneKeyFightHotkey,
             Config.HotKeyConfig.OneKeyFightHotkeyType,

@@ -26,12 +26,12 @@
         <ui:TextBlock Grid.Row="0"
                       Margin="0,0,0,8"
                       FontTypography="BodyStrong"
-                      Text="快捷键设置" />
+                      Text="Hotkey Settings" />
         <ui:TextBlock Grid.Row="1"
                       Margin="0,0,0,8"
                       Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                       TextWrapping="Wrap"
-                      Text="全局热键：只支持组合键和功能键，软件启动直接生效。键鼠监听：支持任意键盘单键、鼠标侧键，功能启动后才生效（推荐）。点击类型按钮可以切换快捷键类型。其中存在长按需求的功能不能使用全局热键。" />
+                      Text="Global Hotkey: only supports key combinations and function keys, and takes effect directly when the software is started. Keyboard and Mouse Monitoring: supports any keyboard single button and mouse side button, and will take effect only after the function is enabled (recommended). Click the type button to switch the shortcut key type. Global hotkeys cannot be used for functions that require a long press." />
         <ItemsControl Grid.Row="2" ItemsSource="{Binding HotKeySettingModels}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type model:HotKeySettingModel}">
