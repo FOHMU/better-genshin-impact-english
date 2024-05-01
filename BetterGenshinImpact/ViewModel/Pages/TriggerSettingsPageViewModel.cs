@@ -17,7 +17,7 @@ namespace BetterGenshinImpact.ViewModel.Pages;
 public partial class TriggerSettingsPageViewModel : ObservableObject, INavigationAware, IViewModel
 {
     [ObservableProperty]
-    private string[] _clickChatOptionNames = ["优先选择第一个选项", "优先选择最后一个选项", "不选择选项"];
+    private string[] _clickChatOptionNames = ["Priorize the first option", "Priorize the last option", "Don't select option"];
 
     public AllConfig Config { get; set; }
 

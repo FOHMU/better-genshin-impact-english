@@ -20,8 +20,8 @@ namespace BetterGenshinImpact.GameTask.AutoFight;
 /// </summary>
 public class OneKeyFightTask : Singleton<OneKeyFightTask>
 {
-    public static readonly string HoldOnMode = "按住时重复";
-    public static readonly string TickMode = "触发";
+    public static readonly string HoldOnMode = "Repeat while pressed";
+    public static readonly string TickMode = "Toggle";
 
     private Dictionary<string, List<CombatCommand>>? _avatarMacros;
     private CancellationTokenSource? _cts = null;

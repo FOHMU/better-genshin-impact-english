@@ -24,4 +24,9 @@ public partial class TriggerSettingsPage
         DataContext = ViewModel = viewModel;
         InitializeComponent();
     }
+
+    private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+
+    }
 }

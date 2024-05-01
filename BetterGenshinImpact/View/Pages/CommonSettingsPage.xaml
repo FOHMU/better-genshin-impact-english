@@ -267,7 +267,7 @@
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        After enabling, you can take screenshots through shortcut keys, and the files are saved in<Hyperlink Command="{Binding GoToFolderCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        After enabling, you can take screenshots through shortcut keys, and the files are saved in <Hyperlink Command="{Binding GoToFolderCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             log/screenshot
                         </Hyperlink>
                     </ui:TextBlock>
@@ -305,7 +305,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="The screenshot function is mainly used for error troubleshooting, quick acquisition of training materials and other development-related functions."
+                                  Text="The screenshot function is mainly used for error troubleshooting, quick acquisition of training materials and other development-related functions"
                                   TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"

@@ -54,7 +54,7 @@
                                    Grid.Column="1"
                                    Margin="0,0,24,0"
                                    Command="{Binding SwitchAutoScriptCommand}"
-                                   Content="启动" />
+                                   Content="Start" Click="Button_Click" />
                     </Grid>
                 </ui:CardExpander.Header>
             </ui:CardExpander>

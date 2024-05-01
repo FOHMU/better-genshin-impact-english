@@ -11,4 +11,9 @@ public partial class ScriptControlPage
         DataContext = ViewModel = viewModel;
         InitializeComponent();
     }
+
+    private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
+
+    }
 }
