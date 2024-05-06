@@ -36,7 +36,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="一键战斗宏"
+                                  Text="One-click combat macro"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -68,7 +68,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Repeat when pressed: Repeat execution when pressed; Trigger: Press to start and then press to turn off"
+                                  Text="Repeat when holding: Repeat execution while holding; Toggle: Press to start and then press to turn off"
                                   TextWrapping="Wrap" />
                     <ComboBox Grid.Row="0"
                               Grid.RowSpan="2"
@@ -102,7 +102,7 @@
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding EditAvatarMacroCommand}"
-                               Content="前往设置" />
+                               Content="Go to Settings" />
                 </Grid>
                 <Grid Margin="16">
                     <Grid.RowDefinitions>
@@ -252,7 +252,7 @@
                                Grid.Column="1"
                                Margin="0,0,24,0"
                                Command="{Binding GoToHotKeyPageCommand}"
-                               Content="绑定快捷键" />
+                               Content="Bind Hotkey" />
                 </Grid>
             </ui:CardExpander.Header>
             <StackPanel>
@@ -273,7 +273,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="When the display of enhanced results cannot be skipped under high latency, this time configuration needs to be extended."
+                                  Text="When the display of enhanced results cannot be skipped under high latency, this time configuration needs to be extended"
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -303,7 +303,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Use it on the item purchase/exchange page. Start from the selected item and press and hold to continue purchasing."
+                                  Text="Use it on the item purchase/exchange page. Start from the selected item and press and hold to continue purchasing"
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
@@ -402,7 +402,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Quickly pick up a large number of dropped objects. It's a bit useless with the auto pick function."
+                                  Text="Quickly pick up a large number of dropped objects. It's a bit useless with the auto pick function"
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>

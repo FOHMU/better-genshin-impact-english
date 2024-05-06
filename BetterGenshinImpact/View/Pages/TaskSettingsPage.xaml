@@ -102,7 +102,7 @@
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        Fully automated card playing -<Hyperlink Command="{Binding GoToAutoGeniusInvokationUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        Fully automated card playing - <Hyperlink Command="{Binding GoToAutoGeniusInvokationUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             Click to view the tutorial
                         </Hyperlink>
                     </ui:TextBlock>
@@ -127,8 +127,9 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Select Deck"
-                                  TextWrapping="Wrap" />
+                                  TextWrapping="Wrap" >
+                        <Run Text="Select deck"/>
+                    </ui:TextBlock>
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
@@ -165,7 +166,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="If the operation speed is too fast frequently and the operation animation has not finished playing, you can add a delay."
+                                  Text="If the operation speed is too fast frequently and the operation animation has not finished playing, you can add a delay"
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -195,13 +196,15 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Automatic Chopping"
-                                  TextWrapping="Wrap" />
+                                  TextWrapping="Wrap" >
+                        <Run Text="Automatic "/>
+                        <Run Text="chopping"/>
+                    </ui:TextBlock>
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        Requires "The Boon of the Elder Tree" -<Hyperlink Command="{Binding GoToAutoWoodUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        Requires "The Boon of the Elder Tree" - <Hyperlink Command="{Binding GoToAutoWoodUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             Click to view the tutorial
                         </Hyperlink>
                     </ui:TextBlock>
@@ -231,7 +234,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="How many times to loop through the chopping, enter 0 for an infinite loop until manually terminated."
+                                  Text="How many times to loop through the chopping, enter 0 for an infinite loop until manually terminated"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -291,7 +294,7 @@
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        Automatically execute selected combat strategies -<Hyperlink Command="{Binding GoToAutoFightUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        Automatically execute selected combat strategies - <Hyperlink Command="{Binding GoToAutoFightUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             Click to view the tutorial
                         </Hyperlink>
                     </ui:TextBlock>
@@ -381,18 +384,25 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+                    <ui:TextBlock
+                    TextWrapping="Wrap" Grid.Row="0" FontTypography="Body" Grid.Column="0">
+                        <Run Text="Automatic domains"/>
+                    </ui:TextBlock>
+                    <ui:TextBlock
+                TextWrapping="Wrap" Grid.Row="1" Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}" Grid.Column="0">
+                        <Run Text="Automatic loop refresh based on Zhongli - "/>
+                        <Hyperlink
+                Command="{Binding GoToAutoDomainUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                            <Run Text="Click to view the tutorial"/>
+                        </Hyperlink>
+                    </ui:TextBlock>
+                    <ui:Button
+                Grid.Row="0" Grid.RowSpan="2" Margin="0,0,24,0" Content="{Binding SwitchAutoDomainButtonText}" Grid.Column="1" Command="{Binding SwitchAutoDomainCommand}" />
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Automatic Domains"
-                                  TextWrapping="Wrap" />
-                    <ui:TextBlock Grid.Row="1"
-                                  Grid.Column="0"
-                                  Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  TextWrapping="Wrap">
-                        Automatic loop refresh based on Zhongli -<Hyperlink Command="{Binding GoToAutoDomainUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
-                            Click to view the tutorial
-                        </Hyperlink>
+                                  TextWrapping="Wrap" >
+                        <Run Text="Automatic domains"/>
                     </ui:TextBlock>
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
@@ -507,7 +517,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="If your computer performance is poor and it takes too long to search for ancient trees, you can try this function."
+                                  Text="If your computer performance is poor and it takes too long to search for ancient trees, you can try this function"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -532,7 +542,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="If your computer performance is poor and you cannot click F to open a domain or receive rewards, you can try this function."
+                                  Text="If your computer performance is poor and you cannot click F to open a domain or receive rewards, you can try this function"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"

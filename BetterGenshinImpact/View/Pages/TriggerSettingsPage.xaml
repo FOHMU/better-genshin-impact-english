@@ -34,7 +34,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Auto Pick"
+                                  Text="Auto pick"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -149,12 +149,12 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Auto Skip Dialogue"
+                                  Text="Auto skip dialogue"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Quickly skip text and automatically select options when the in-game plot is &quot;auto&quot; enabled."
+                                  Text="Quickly skip text and automatically select options when the in-game plot is &quot;auto&quot; enabled"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -201,19 +201,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Select Option Configuration"
+                                  Text="Select option configuration"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Prefer first option、Select last option、Don't select option"
+                                  Text="Prioritize first option, select last option, do not select option"
                                   TextWrapping="Wrap" />
                     <ComboBox Grid.Row="0"
                               Grid.RowSpan="2"
                               Grid.Column="1"
                               Margin="0,0,36,0"
                               ItemsSource="{Binding ClickChatOptionNames}"
-                              SelectedItem="{Binding Config.AutoSkipConfig.ClickChatOption, Mode=TwoWay}" />
+                              SelectedItem="{Binding Config.AutoSkipConfig.ClickChatOption, Mode=TwoWay}" SelectionChanged="ComboBox_SelectionChanged" />
                 </Grid>
                 <Grid Margin="16">
                     <Grid.RowDefinitions>
@@ -232,7 +232,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="It is convenient for you to still be able to see the options clearly even in the automatic plot."
+                                  Text="It is convenient for you to still be able to see the options clearly even in the automatic plot"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -258,7 +258,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="When you talk to Katheryne, you will automatically receive the Daily Commission reward."
+                                  Text="When you talk to Katheryne, you will automatically receive the Daily Commission reward"
                                   TextWrapping="Wrap" />
                     <ui:ToggleSwitch Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -352,7 +352,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Options will be selected based on the keywords of the selected branch."
+                                  Text="Options will be selected based on the keywords of the selected branch"
                                   TextWrapping="Wrap" />
                     <ui:TextBox Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -413,7 +413,7 @@
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        Fish identification based on YOLOv8. Help with AI training Help with AI training QQ group:<Hyperlink Command="{Binding GoToQGroupUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        Fish identification based on YOLOv8. Help with AI training Help with AI training QQ group: <Hyperlink Command="{Binding GoToQGroupUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             863012276
                         </Hyperlink>
                     </ui:TextBlock>
@@ -440,7 +440,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="If this time is exceeded, the rod will be automatically lifted and the bait will be re-identified and selected for throwing."
+                                  Text="If this time is exceeded, the rod will be automatically lifted and the bait will be re-identified and selected for throwing"
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -471,7 +471,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Fast Teleport"
+                                  Text="Fast teleport"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -550,7 +550,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Enable Teleport Shortcut Key"
+                                  Text="Enable teleport shortcut key"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
