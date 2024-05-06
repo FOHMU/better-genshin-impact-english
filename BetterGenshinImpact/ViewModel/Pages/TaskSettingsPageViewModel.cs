@@ -31,16 +31,16 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
     private static readonly object _locker = new();
 
     [ObservableProperty] private string[] _strategyList;
-    [ObservableProperty] private string _switchAutoGeniusInvokationButtonText = "启动";
+    [ObservableProperty] private string _switchAutoGeniusInvokationButtonText = "Start";
 
     [ObservableProperty] private int _autoWoodRoundNum;
-    [ObservableProperty] private string _switchAutoWoodButtonText = "启动";
+    [ObservableProperty] private string _switchAutoWoodButtonText = "Start";
 
     [ObservableProperty] private string[] _combatStrategyList;
     [ObservableProperty] private int _autoDomainRoundNum;
-    [ObservableProperty] private string _switchAutoDomainButtonText = "启动";
-    [ObservableProperty] private string _switchAutoFightButtonText = "启动";
-    [ObservableProperty] private string _switchAutoTrackButtonText = "启动";
+    [ObservableProperty] private string _switchAutoDomainButtonText = "Start";
+    [ObservableProperty] private string _switchAutoFightButtonText = "Start";
+    [ObservableProperty] private string _switchAutoTrackButtonText = "Start";
 
     public TaskSettingsPageViewModel(IConfigService configService, INavigationService navigationService, TaskTriggerDispatcher taskTriggerDispatcher)
     {
@@ -111,7 +111,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
         {
             lock (_locker)
             {
-                if (SwitchAutoGeniusInvokationButtonText == "启动")
+                if (SwitchAutoGeniusInvokationButtonText == "Start")
                 {
                     if (string.IsNullOrEmpty(Config.AutoGeniusInvokationConfig.StrategyName))
                     {
@@ -132,12 +132,12 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
                     _cts = new CancellationTokenSource();
                     var param = new GeniusInvokationTaskParam(_cts, _taskDispatcher, content);
                     _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoGeniusInvokation, param);
-                    SwitchAutoGeniusInvokationButtonText = "停止";
+                    SwitchAutoGeniusInvokationButtonText = "Stop";
                 }
                 else
                 {
                     _cts?.Cancel();
-                    SwitchAutoGeniusInvokationButtonText = "启动";
+                    SwitchAutoGeniusInvokationButtonText = "Start";
                 }
             }
         }
@@ -160,18 +160,18 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
         {
             lock (_locker)
             {
-                if (SwitchAutoWoodButtonText == "启动")
+                if (SwitchAutoWoodButtonText == "Start")
                 {
                     _cts?.Cancel();
                     _cts = new CancellationTokenSource();
                     var param = new WoodTaskParam(_cts, _taskDispatcher, AutoWoodRoundNum);
                     _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoWood, param);
-                    SwitchAutoWoodButtonText = "停止";
+                    SwitchAutoWoodButtonText = "Stop";
                 }
                 else
                 {
                     _cts?.Cancel();
-                    SwitchAutoWoodButtonText = "启动";
+                    SwitchAutoWoodButtonText = "Start";
                 }
             }
         }
@@ -340,7 +340,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
             return;
         }
 
-        instance.SwitchAutoTrackButtonText = running ? "停止" : "启动";
+        instance.SwitchAutoTrackButtonText = running ? "Stop" : "Start";
     }
 
     public static void SetSwitchAutoGeniusInvokationButtonText(bool running)
@@ -351,7 +351,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
             return;
         }
 
-        instance.SwitchAutoGeniusInvokationButtonText = running ? "停止" : "启动";
+        instance.SwitchAutoGeniusInvokationButtonText = running ? "Stop" : "Start";
     }
 
     public static void SetSwitchAutoWoodButtonText(bool running)
@@ -362,7 +362,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
             return;
         }
 
-        instance.SwitchAutoWoodButtonText = running ? "停止" : "启动";
+        instance.SwitchAutoWoodButtonText = running ? "Stop" : "Start";
     }
 
     public static void SetSwitchAutoDomainButtonText(bool running)
@@ -373,7 +373,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
             return;
         }
 
-        instance.SwitchAutoDomainButtonText = running ? "停止" : "启动";
+        instance.SwitchAutoDomainButtonText = running ? "Stop" : "Start";
     }
 
     public static void SetSwitchAutoFightButtonText(bool running)
@@ -384,6 +384,6 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
             return;
         }
 
-        instance.SwitchAutoFightButtonText = running ? "停止" : "启动";
+        instance.SwitchAutoFightButtonText = running ? "Stop" : "Start";
     }
 }
