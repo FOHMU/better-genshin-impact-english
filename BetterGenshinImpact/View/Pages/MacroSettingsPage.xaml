@@ -36,7 +36,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="One-click combat macro"
+                                  Text="One-click macro (by character)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -90,13 +90,16 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Battle macro configuration"
+                                  Text="Macro configuration"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Configure the combat macro executed by each character. A restart is required for the changes to take effect"
-                                  TextWrapping="Wrap" />
+                                  TextWrapping="Wrap">
+                        Configure macros executed by each character, such as: Hutao re-jumps,<Hyperlink Command="{Binding GoToOneKeyMacroUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                            Click to view the tutorial
+                        </Hyperlink>
+                    </ui:TextBlock>
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"

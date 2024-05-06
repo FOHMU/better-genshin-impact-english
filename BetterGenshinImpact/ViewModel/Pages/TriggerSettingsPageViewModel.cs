@@ -8,6 +8,7 @@ using CommunityToolkit.Mvvm.Input;
 using Fischless.GameCapture;
 using System.Diagnostics;
 using System.Windows;
+using BetterGenshinImpact.GameTask.AutoPick;
 using BetterGenshinImpact.GameTask.AutoSkip.Assets;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -18,6 +19,9 @@ public partial class TriggerSettingsPageViewModel : ObservableObject, INavigatio
 {
     [ObservableProperty]
     private string[] _clickChatOptionNames = ["Priorize the first option", "Priorize the last option", "Don't select option"];
+
+    [ObservableProperty]
+    private string[] _pickOcrEngineNames = [PickOcrEngineEnum.Paddle.ToString(), PickOcrEngineEnum.Yap.ToString()];
 
     public AllConfig Config { get; set; }
 

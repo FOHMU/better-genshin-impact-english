@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 using BetterGenshinImpact.GameTask.AutoFight;
+using BetterGenshinImpact.GameTask.AutoTrackPath;
 using BetterGenshinImpact.GameTask.Common;
 using BetterGenshinImpact.GameTask.Common.BgiVision;
 using BetterGenshinImpact.Helpers.Extensions;
@@ -239,8 +240,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
             nameof(Config.HotKeyConfig.QuickSereniteaPotHotkey),
             Config.HotKeyConfig.QuickSereniteaPotHotkey,
             Config.HotKeyConfig.QuickSereniteaPotHotkeyType,
-            (_, _) => { QuickSereniteaPotTask.Done(); },
-            true
+            (_, _) => { QuickSereniteaPotTask.Done(); }
         ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
@@ -275,13 +275,13 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
             (_, _) => { _taskSettingsPageViewModel.OnSwitchAutoDomain(); }
         ));
 
-        HotKeySettingModels.Add(new HotKeySettingModel(
-            "Start/Stop automatic trail",
-            nameof(Config.HotKeyConfig.AutoTrackHotkey),
-            Config.HotKeyConfig.AutoTrackHotkey,
-            Config.HotKeyConfig.AutoTrackHotkeyType,
-            (_, _) => { _taskSettingsPageViewModel.OnSwitchAutoTrack(); }
-        ));
+        // HotKeySettingModels.Add(new HotKeySettingModel(
+        //     "（测试）启动/停止自动追踪",
+        //     nameof(Config.HotKeyConfig.AutoTrackHotkey),
+        //     Config.HotKeyConfig.AutoTrackHotkey,
+        //     Config.HotKeyConfig.AutoTrackHotkeyType,
+        //     (_, _) => { _taskSettingsPageViewModel.OnSwitchAutoTrack(); }
+        // ));
 
         HotKeySettingModels.Add(new HotKeySettingModel(
             "Quickly click the confirmation button in Genshin Impact",
@@ -330,6 +330,16 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
             OnKeyDownAction = (_, _) => { OneKeyFightTask.Instance.KeyDown(); },
             OnKeyUpAction = (_, _) => { OneKeyFightTask.Instance.KeyUp(); }
         });
+
+        HotKeySettingModels.Add(new HotKeySettingModel(
+            "（测试）地图路线录制",
+            nameof(Config.HotKeyConfig.MapPosRecordHotkey),
+            Config.HotKeyConfig.MapPosRecordHotkey,
+            Config.HotKeyConfig.MapPosRecordHotkeyType,
+            (_, _) =>
+            {
+                PathPointRecorder.Instance.Switch();
+            }));
     }
 
     private string ToChinese(bool enabled)

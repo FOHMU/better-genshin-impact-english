@@ -261,13 +261,13 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Enable screenshot functionality (developer)"
+                                  Text="Enable saving screenshots (developer)"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                                   TextWrapping="Wrap">
-                        After enabling, you can take screenshots through shortcut keys, and the files are saved in <Hyperlink Command="{Binding GoToFolderCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                        You can take screenshots through shortcut keys, and the files are saved in <Hyperlink Command="{Binding GoToFolderCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
                             log/screenshot
                         </Hyperlink>
                     </ui:TextBlock>

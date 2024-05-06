@@ -30,8 +30,6 @@ public class TestTrigger : ITaskTrigger
 
     // private readonly YoloV8 _predictor = new(Global.Absolute("Assets\\Model\\Domain\\bgi_tree.onnx"));
 
-    private readonly Lazy<EntireMap> _bigMap = new();
-
     public TestTrigger()
     {
         var info = TaskContext.Instance().SystemInfo;
@@ -97,18 +95,19 @@ public class TestTrigger : ITaskTrigger
         //}
 
         // 小地图匹配测试
-        var tar = ElementAssets.Instance.PaimonMenuRo.TemplateImageGreyMat!;
-        var p = MatchTemplateHelper.MatchTemplate(content.CaptureRectArea.SrcGreyMat, tar, TemplateMatchModes.CCoeffNormed, null, 0.9);
-        if (p.X == 0 || p.Y == 0)
-        {
-            return;
-        }
-
-        _bigMap.Value.GetMapPositionAndDrawByFeatureMatch(new Mat(content.CaptureRectArea.SrcGreyMat, new Rect(p.X + 24, p.Y - 15, 210, 210)));
+        // var tar = ElementAssets.Instance.PaimonMenuRo.TemplateImageGreyMat!;
+        // var p = MatchTemplateHelper.MatchTemplate(content.CaptureRectArea.SrcGreyMat, tar, TemplateMatchModes.CCoeffNormed, null, 0.9);
+        // if (p.X == 0 || p.Y == 0)
+        // {
+        //     return;
+        // }
+        //
+        // _bigMap.Value.GetMapPositionAndDrawByFeatureMatch(new Mat(content.CaptureRectArea.SrcGreyMat, new Rect(p.X + 24, p.Y - 15, 210, 210)));
 
         // 大地图测试
-        // var mat = content.CaptureRectArea.SrcGreyMat;
-        // _bigMap.Value.GetMapPositionAndDrawBySurf(mat);
+        var mat = content.CaptureRectArea.SrcGreyMat;
+        // mat = mat.Resize(new Size(240, 135));
+        EntireMap.Instance.GetMapPositionAndDrawByFeatureMatch(mat);
 
         // Bv.BigMapIsUnderground(content.CaptureRectArea);
     }
@@ -221,7 +220,7 @@ public class TestTrigger : ITaskTrigger
                     }
                 }
 
-                VisionContext.Instance().DrawContent.PutLine("co", new LineDrawable(correctP1, correctP2 + (correctP2 - correctP1) * 3));
+                // VisionContext.Instance().DrawContent.PutLine("co", new LineDrawable(correctP1, correctP2 + (correctP2 - correctP1) * 3));
             }
         }
     }
@@ -294,9 +293,9 @@ public class TestTrigger : ITaskTrigger
         var x1 = center.X + r * Math.Cos(angle * Math.PI / 180);
         var y1 = center.Y + r * Math.Sin(angle * Math.PI / 180);
 
-        var line = new LineDrawable(center, new Point(x1, y1));
-        line.Pen = new Pen(Color.Yellow, 1);
-        VisionContext.Instance().DrawContent.PutLine("camera", line);
+        // var line = new LineDrawable(center, new Point(x1, y1));
+        // line.Pen = new Pen(Color.Yellow, 1);
+        // VisionContext.Instance().DrawContent.PutLine("camera", line);
     }
 
     static List<int> FindPeaks(float[] data)
