@@ -39,16 +39,10 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
 
     [ObservableProperty] private string[] _combatStrategyList;
     [ObservableProperty] private int _autoDomainRoundNum;
-<<<<<<< HEAD
     [ObservableProperty] private string _switchAutoDomainButtonText = "Start";
     [ObservableProperty] private string _switchAutoFightButtonText = "Start";
     [ObservableProperty] private string _switchAutoTrackButtonText = "Start";
-=======
-    [ObservableProperty] private string _switchAutoDomainButtonText = "启动";
-    [ObservableProperty] private string _switchAutoFightButtonText = "启动";
-    [ObservableProperty] private string _switchAutoTrackButtonText = "启动";
-    [ObservableProperty] private string _switchAutoMusicGameButtonText = "启动";
->>>>>>> Main-Source/main
+    [ObservableProperty] private string _switchAutoMusicGameButtonText = "Start";
 
     public TaskSettingsPageViewModel(IConfigService configService, INavigationService navigationService, TaskTriggerDispatcher taskTriggerDispatcher)
     {
@@ -202,7 +196,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
         {
             lock (_locker)
             {
-                if (SwitchAutoFightButtonText == "启动")
+                if (SwitchAutoFightButtonText == "Start")
                 {
                     var path = Global.Absolute(@"User\AutoFight\" + Config.AutoFightConfig.StrategyName + ".txt");
                     if ("根据队伍自动选择".Equals(Config.AutoFightConfig.StrategyName))
@@ -219,12 +213,12 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
                     _cts = new CancellationTokenSource();
                     var param = new AutoFightParam(_cts, path);
                     _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoFight, param);
-                    SwitchAutoFightButtonText = "停止";
+                    SwitchAutoFightButtonText = "Stop";
                 }
                 else
                 {
                     _cts?.Cancel();
-                    SwitchAutoFightButtonText = "启动";
+                    SwitchAutoFightButtonText = "Start";
                 }
             }
         }
@@ -268,7 +262,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
         {
             lock (_locker)
             {
-                if (SwitchAutoDomainButtonText == "启动")
+                if (SwitchAutoDomainButtonText == "Start")
                 {
                     var path = Global.Absolute(@"User\AutoFight\" + Config.AutoFightConfig.StrategyName + ".txt");
                     if ("根据队伍自动选择".Equals(Config.AutoFightConfig.StrategyName))
@@ -285,12 +279,12 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
                     _cts = new CancellationTokenSource();
                     var param = new AutoDomainParam(_cts, AutoDomainRoundNum, path);
                     _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoDomain, param);
-                    SwitchAutoDomainButtonText = "停止";
+                    SwitchAutoDomainButtonText = "Stop";
                 }
                 else
                 {
                     _cts?.Cancel();
-                    SwitchAutoDomainButtonText = "启动";
+                    SwitchAutoDomainButtonText = "Start";
                 }
             }
         }
@@ -313,18 +307,18 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
         {
             lock (_locker)
             {
-                if (SwitchAutoTrackButtonText == "启动")
+                if (SwitchAutoTrackButtonText == "Start")
                 {
                     _cts?.Cancel();
                     _cts = new CancellationTokenSource();
                     var param = new AutoTrackParam(_cts);
                     _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoTrack, param);
-                    SwitchAutoTrackButtonText = "停止";
+                    SwitchAutoTrackButtonText = "Stop";
                 }
                 else
                 {
                     _cts?.Cancel();
-                    SwitchAutoTrackButtonText = "启动";
+                    SwitchAutoTrackButtonText = "Start";
                 }
             }
         }
