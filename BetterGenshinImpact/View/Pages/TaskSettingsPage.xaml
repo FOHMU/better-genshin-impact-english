@@ -287,7 +287,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Auto-battle (experimental feature)"
+                                  Text="Auto-battle"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -671,6 +671,35 @@
                 </Grid>
             </StackPanel>
         </ui:CardExpander>
+
+        <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon MusicNote224}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock Grid.Row="0"
+                                  Grid.Column="0"
+                                  FontTypography="Body"
+                                  Text="Music game event"
+                                  TextWrapping="Wrap" />
+                    <ui:TextBlock Grid.Row="1"
+                                  Grid.Column="0"
+                                  Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
+                                  TextWrapping="Wrap">
+                        进入演奏界面使用，下落模式必须选择垂落模式 -<Hyperlink Command="{Binding GoToAutoMusicGameUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
+                            Click to view the tutorial
+                        </Hyperlink>
+                    </ui:TextBlock>
+                </Grid>
+            </ui:CardControl.Header>
+            <ui:Button Margin="0,0,36,0"
+                       Command="{Binding SwitchAutoMusicGameCommand}"
+                       Content="{Binding SwitchAutoMusicGameButtonText}" />
+        </ui:CardControl>
+
+
 
         <!--<ui:CardExpander Margin="0,0,0,12" ContentPadding="0" Icon="{ui:SymbolIcon Accessibility24}">
             <ui:CardExpander.Header>

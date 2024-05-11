@@ -17,6 +17,7 @@ using System.Threading;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 using MessageBox = System.Windows.MessageBox;
+using BetterGenshinImpact.GameTask.AutoMusicGame;
 
 namespace BetterGenshinImpact.ViewModel.Pages;
 
@@ -38,9 +39,16 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
 
     [ObservableProperty] private string[] _combatStrategyList;
     [ObservableProperty] private int _autoDomainRoundNum;
+<<<<<<< HEAD
     [ObservableProperty] private string _switchAutoDomainButtonText = "Start";
     [ObservableProperty] private string _switchAutoFightButtonText = "Start";
     [ObservableProperty] private string _switchAutoTrackButtonText = "Start";
+=======
+    [ObservableProperty] private string _switchAutoDomainButtonText = "启动";
+    [ObservableProperty] private string _switchAutoFightButtonText = "启动";
+    [ObservableProperty] private string _switchAutoTrackButtonText = "启动";
+    [ObservableProperty] private string _switchAutoMusicGameButtonText = "启动";
+>>>>>>> Main-Source/main
 
     public TaskSettingsPageViewModel(IConfigService configService, INavigationService navigationService, TaskTriggerDispatcher taskTriggerDispatcher)
     {
@@ -184,7 +192,7 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
     [RelayCommand]
     public void OnGoToAutoWoodUrl()
     {
-        Process.Start(new ProcessStartInfo("https://bgi.huiyadan.com/doc.html#%E8%87%AA%E5%8A%A8%E4%BC%90%E6%9C%A8") { UseShellExecute = true });
+        Process.Start(new ProcessStartInfo("https://bgi.huiyadan.com/feats/felling.html") { UseShellExecute = true });
     }
 
     [RelayCommand]
@@ -330,6 +338,40 @@ public partial class TaskSettingsPageViewModel : ObservableObject, INavigationAw
     public void OnGoToAutoTrackUrl()
     {
         Process.Start(new ProcessStartInfo("https://bgi.huiyadan.com/feats/track.html") { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    public void OnSwitchAutoMusicGame()
+    {
+        try
+        {
+            lock (_locker)
+            {
+                if (SwitchAutoMusicGameButtonText == "Start")
+                {
+                    _cts?.Cancel();
+                    _cts = new CancellationTokenSource();
+                    var param = new AutoMusicGameParam(_cts);
+                    _taskDispatcher.StartIndependentTask(IndependentTaskEnum.AutoMusicGame, param);
+                    SwitchAutoMusicGameButtonText = "Stop";
+                }
+                else
+                {
+                    _cts?.Cancel();
+                    SwitchAutoMusicGameButtonText = "Start";
+                }
+            }
+        }
+        catch (System.Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    }
+
+    [RelayCommand]
+    public void OnGoToAutoMusicGameUrl()
+    {
+        Process.Start(new ProcessStartInfo("https://bgi.huiyadan.com/feats/music.html") { UseShellExecute = true });
     }
 
     public static void SetSwitchAutoTrackButtonText(bool running)
