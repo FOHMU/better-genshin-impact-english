@@ -15,7 +15,7 @@ namespace BetterGenshinImpact.GameTask.AutoGeniusInvokation;
 [Serializable]
 public partial class AutoGeniusInvokationConfig : ObservableObject
 {
-    [ObservableProperty] private string _strategyName = "1.莫娜砂糖琴";
+    [ObservableProperty] private string _strategyName = "1. Mona, Sucrose, Jean";
 
     [ObservableProperty] private int _sleepDelay = 0;
 

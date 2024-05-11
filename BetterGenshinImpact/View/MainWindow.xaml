@@ -44,7 +44,7 @@
                            Grid.Row="1"
                            IsBackButtonVisible="Collapsed"
                            IsPaneToggleVisible="True"
-                           OpenPaneLength="150">
+                           OpenPaneLength="160">
             <ui:NavigationView.MenuItems>
                 <ui:NavigationViewItem Content="Start"
                                        NavigationCacheMode="Enabled"

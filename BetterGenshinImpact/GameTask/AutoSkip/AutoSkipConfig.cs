@@ -53,7 +53,7 @@ namespace BetterGenshinImpact.GameTask.AutoSkip
         /// 优先选择最后一个选项
         /// 不选择选项
         /// </summary>
-        [ObservableProperty] private string _clickChatOption = "优先选择最后一个选项";
+        [ObservableProperty] private string _clickChatOption = "Priorize the last option";
 
         /// <summary>
         /// 自动邀约启用
@@ -67,12 +67,12 @@ namespace BetterGenshinImpact.GameTask.AutoSkip
 
         public bool IsClickFirstChatOption()
         {
-            return ClickChatOption == "优先选择第一个选项";
+            return ClickChatOption == "Priorize the first option";
         }
 
         public bool IsClickNoneChatOption()
         {
-            return ClickChatOption == "不选择选项";
+            return ClickChatOption == "Don't select option";
         }
     }
 }

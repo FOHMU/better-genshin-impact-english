@@ -197,8 +197,7 @@
                                   Grid.Column="0"
                                   FontTypography="Body"
                                   TextWrapping="Wrap" >
-                        <Run Text="Automatic "/>
-                        <Run Text="chopping"/>
+                        <Run Text="Automatic chopping"/>
                     </ui:TextBlock>
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"

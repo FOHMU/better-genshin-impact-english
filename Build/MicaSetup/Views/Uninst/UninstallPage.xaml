@@ -48,7 +48,7 @@
                        Margin="0,8,0,8"
                        HorizontalAlignment="Center"
                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                       Text="🍨 BetterGI · 更好的原神" />
+                       Text="🍨 BetterGI · A Better Genshin Impact" />
             <StackPanel>
                 <StackPanel Margin="30,55,30,0">
                     <control:SetupProgressBar d:IsIndeterminate="True"

@@ -36,7 +36,7 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="One-click macro (by character)"
+                                  Text="One-click combat macro"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
@@ -68,7 +68,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Repeat when holding: Repeat execution while holding; Toggle: Press to start and then press to turn off"
+                                  Text="Repeat when pressed: Repeat execution when pressed; Trigger: Press to start and then press to turn off"
                                   TextWrapping="Wrap" />
                     <ComboBox Grid.Row="0"
                               Grid.RowSpan="2"
@@ -90,22 +90,19 @@
                     <ui:TextBlock Grid.Row="0"
                                   Grid.Column="0"
                                   FontTypography="Body"
-                                  Text="Macro configuration"
+                                  Text="Battle macro configuration"
                                   TextWrapping="Wrap" />
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  TextWrapping="Wrap">
-                        Configure macros executed by each character, such as: Hutao re-jumps,<Hyperlink Command="{Binding GoToOneKeyMacroUrlCommand}" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}">
-                            Click to view the tutorial
-                        </Hyperlink>
-                    </ui:TextBlock>
+                                  Text="Configure the combat macro executed by each character. A restart is required for the changes to take effect"
+                                  TextWrapping="Wrap" />
                     <ui:Button Grid.Row="0"
                                Grid.RowSpan="2"
                                Grid.Column="1"
                                Margin="0,0,36,0"
                                Command="{Binding EditAvatarMacroCommand}"
-                               Content="Go to Settings" />
+                               Content="前往设置" />
                 </Grid>
                 <Grid Margin="16">
                     <Grid.RowDefinitions>
@@ -276,7 +273,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="When the display of enhanced results cannot be skipped under high latency, this time configuration needs to be extended"
+                                  Text="When the display of enhanced results cannot be skipped under high latency, this time configuration needs to be extended."
                                   TextWrapping="Wrap" />
                     <ui:NumberBox Grid.Row="0"
                                   Grid.RowSpan="2"
@@ -306,7 +303,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Use it on the item purchase/exchange page. Start from the selected item and press and hold to continue purchasing"
+                                  Text="Use it on the item purchase/exchange page. Start from the selected item and press and hold to continue purchasing."
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>
@@ -405,7 +402,7 @@
                     <ui:TextBlock Grid.Row="1"
                                   Grid.Column="0"
                                   Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
-                                  Text="Quickly pick up a large number of dropped objects. It's a bit useless with the auto pick function"
+                                  Text="Quickly pick up a large number of dropped objects. It's a bit useless with the auto pick function."
                                   TextWrapping="Wrap" />
                 </Grid>
             </ui:CardControl.Header>

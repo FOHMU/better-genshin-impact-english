@@ -332,7 +332,7 @@ public partial class HotKeyPageViewModel : ObservableObject, IViewModel
         });
 
         HotKeySettingModels.Add(new HotKeySettingModel(
-            "（测试）地图路线录制",
+            "(Test) Map route recording",
             nameof(Config.HotKeyConfig.MapPosRecordHotkey),
             Config.HotKeyConfig.MapPosRecordHotkey,
             Config.HotKeyConfig.MapPosRecordHotkeyType,
